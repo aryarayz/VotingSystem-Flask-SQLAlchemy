@@ -1,0 +1,39 @@
+{% extends 'index.html' %}
+
+{% block body %}
+
+<section class="hero is-dark is-fullheight">
+        <div class="column is 1 is-offset 3" style="margin-top: 5px;">
+	      	<button class="button is-large is-warning">
+	      		<div>
+	      			<a href="{{ url_for('edit_member') }}" class="has-text-dark">
+	      				<i class="fas fa-poll"></i>  <strong>Edit Details</strong>
+	      			</a>
+	      		</div>
+	      	</button>
+	      </div>
+
+    <div class="hero-body">
+      <div class="container">
+        <center>
+            <h1 class="has-text-success" style="font-size: 100px; font-weight: 700;">
+                Welcome,
+            </h1>
+            <h2 class="title has-text-white">
+                {{ current_user.name }}
+            </h2>
+        </center>
+      </div>
+
+      <div class="column is 1 is-offset 2" style="margin-top: 5px;">
+	      	<button class="button is-large is-warning">
+	      		<div>
+	      			<a href="{{ url_for('edit_member') }}" class="has-text-dark">
+	      				<i class="fas fa-poll"></i>  <strong>Vote Now</strong>
+	      			</a>
+	      		</div>
+	      	</button>
+	      </div>
+  </section>
+
+{% endblock %}

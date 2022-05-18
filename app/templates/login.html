@@ -1,0 +1,54 @@
+{% extends 'index.html' %}
+
+{% block body %}
+
+<div class="container" style="margin-top: 20px;">
+	<section class="hero is-small is-warning">
+	  <div class="hero-body">
+	      <h1 class="is-size-1 has-text-weight-bold has-text-dark">
+	        <i class="fa fa-arrow-right"></i>  Login
+	      </h1>
+	  </div>
+	</section>
+
+	<div class="column is-half box" style="margin-top: 20px;">
+		<form method="post" action="" style="margin-top: 30px;">
+			<div class="field">
+					{{ form.studentId.label(class="label") }}
+					{% if form.studentId.errors %}
+							{{ form.studentId(class="input is-danger") }}
+							<div class="help is-danger">
+									{% for error in form.studentId.errors %}
+											{{ error }}
+									{% endfor %}
+							</div>
+					{% else %}
+							{{ form.studentId(class="input") }}
+					{% endif %}   
+			</div>
+			<div class="field">
+					{{ form.pass_word.label(class="label") }}
+					{% if form.pass_word.errors %}
+							{{ form.pass_word(class="input is-danger") }}
+							<div class="help is-danger">
+									{% for error in form.pass_word.errors %}
+											{{ error }}
+									{% endfor %}
+							</div>
+					{% else %}
+							{{ form.pass_word(class="input") }}
+					{% endif %}
+            </div>
+			<div class="field">
+								{{ form.submit(class="button is-success") }}              
+            </div>
+		</form>
+		<div>
+				<a href="{{ url_for('signuppage') }}" class="is-link">
+						<small>Do not have an account yet?</small>
+				</a>
+		</div>
+	</div>
+</div>
+
+{% endblock %}
